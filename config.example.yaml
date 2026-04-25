@@ -1,0 +1,65 @@
+# Example configuration file for TRACE
+# Copy this to config.yaml and fill in your API keys
+
+models:
+  planner:
+    provider: "openai"  # Options: "openai", "aliyun", "anthropic", "local"
+    model: "gpt-4"
+    api_key: "${OPENAI_API_KEY}"  # Use environment variable
+    base_url: null  # Optional: custom API endpoint
+    model_info:
+      vision: false
+      function_calling: true
+      json_output: true
+
+  navigator:
+    provider: "openai"
+    model: "gpt-4-vision-preview"
+    api_key: "${OPENAI_API_KEY}"
+    base_url: null
+    model_info:
+      vision: true
+      function_calling: false
+      json_output: false
+
+  reasoner:
+    provider: "openai"
+    model: "gpt-4-vision-preview"
+    api_key: "${OPENAI_API_KEY}"
+    base_url: null
+    model_info:
+      vision: true
+      function_calling: false
+      json_output: false
+
+colpali:
+  model_path: "vidore/colpali-v1.2"  # Path to ColPali model (local or HuggingFace)
+  device: "cuda"  # Options: "cuda", "cpu", "cuda:0", "cuda:1", etc.
+
+retrieval:
+  top_k: 10  # Number of pages to send to reasoner
+  graph_threshold: 0.7  # Similarity threshold for graph edges
+  max_pages_per_step: 3  # Maximum relevant pages per search step
+  graph_k_neighbors: 3  # Number of graph neighbors to expand
+
+# Example configurations for different providers:
+
+# Aliyun (Qwen models):
+# planner:
+#   provider: "aliyun"
+#   model: "qwen-max"
+#   api_key: "${ALIYUN_API_KEY}"
+#   base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+# navigator:
+#   provider: "aliyun"
+#   model: "qwen-vl-plus"
+#   api_key: "${ALIYUN_API_KEY}"
+#   base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+
+# Local vLLM server:
+# planner:
+#   provider: "local"
+#   model: "your-model-name"
+#   api_key: "dummy"
+#   base_url: "http://localhost:8000/v1"
