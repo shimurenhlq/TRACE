@@ -152,12 +152,9 @@ retrieval:
   max_pages_per_step: 3
 ```
 
-## Dataset
+## Dataset: M5BookVQA
 
-The M3BookVQA dataset used in this project is available on Hugging Face:
-- **Format**: JSONL with question, options, answer, and page references
-- **Content**: Multi-modal questions over book-length documents
-- **Download**: [HuggingFace Dataset](https://huggingface.co/datasets/shimurenhlq/M3BookVQA) (Coming soon)
+M5BookVQA is a benchmark designed to assess deep, multi-hop reasoning over book-length documents, addressing the limitations of existing DocVQA datasets. It contains multi-modal questions paired with page references drawn from full-length books.
 
 Sample data format:
 ```json
@@ -170,6 +167,23 @@ Sample data format:
   "topic": "history"
 }
 ```
+
+### Access & Download
+
+The dataset is hosted on an encrypted cloud archive. To obtain access, please follow these steps:
+
+1. Download and complete the [Application Form](application-form/Application-Form-for-M5BookVQA.md).
+2. Email the completed form to [heliqi@whu.edu.cn](mailto:heliqi@whu.edu.cn) with the subject line:
+   **"M5BookVQA Dataset Application — [Your Name / Institution]"**
+3. We will review your application and, upon approval, send you the **download link and decryption password**.
+
+### Important Note
+
+The original content in this dataset is sourced from published books whose copyright remains with the respective publishers. The dataset is provided solely for **non-commercial academic research** and is made available only to researchers affiliated with universities or research institutions. By downloading and using the dataset, you agree not to use it for any commercial purpose and not to redistribute it in any form.
+
+### License
+
+The M5BookVQA dataset is released under the [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
 ## Project Structure
 

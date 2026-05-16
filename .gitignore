@@ -43,6 +43,10 @@ results/
 *.pt
 *.pkl
 
+# Dataset files (not for distribution via git)
+M5BookVQA/
+M5BookVQA.zip
+
 # Logs
 *.log
 logs/
